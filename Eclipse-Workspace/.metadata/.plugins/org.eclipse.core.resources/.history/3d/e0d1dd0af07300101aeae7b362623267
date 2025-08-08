@@ -1,0 +1,19 @@
+package br.com.senaisp.bauru.secao04.aula08;
+
+public class CalculadoraTest {
+
+	public static void main(String[] args) {
+		Calculadora calc= new Calculadora();
+		//Calculado cada pessoa
+		calc.calcularTotal("Pessoa1",10);
+		calc.calcularTotal("Pessoa2",12);
+		calc.calcularTotal("Pessoa3",9);
+		calc.calcularTotal("Pessoa4",8);
+		calc.calcularTotal("Pessoa5",7);
+		calc.calcularTotal("Pessoa6",15);
+		calc.calcularTotal("Pessoa7",11);
+		calc.calcularTotal("Pessoa8",30);
+
+	}
+
+}
