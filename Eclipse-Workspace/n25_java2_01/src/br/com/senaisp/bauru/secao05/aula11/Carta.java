@@ -46,14 +46,14 @@ public class Carta {
 	@Override
 	public String toString() {
 		String ret ="╔═════╗\n"+//1
-				 	"│##   │\n"+//2
-				 	"│  *  │\n"+//3
-				 	"│   ##│\n"+//4
+				 	"║##   ║\n"+//2
+				 	"║  *  ║\n"+//3
+				 	"║   ##║\n"+//4
 				 	"╚═════╝";  //5
 		String spc = getNumero().equals("10")? "" : "";
-		ret = ret.replaceFirst("##", getNumero() + " ");
+		ret = ret.replaceFirst("##", getNumero() + spc);
 				ret = ret.replace("*", getNaipe());
-				ret = ret.replace("##", " " +getNumero());
+				ret = ret.replace("##", spc +getNumero());
 		return ret;
 		}
 	
