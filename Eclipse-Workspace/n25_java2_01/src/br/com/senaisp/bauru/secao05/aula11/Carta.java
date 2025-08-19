@@ -50,7 +50,7 @@ public class Carta {
 				 	"║  *  ║\n"+//3
 				 	"║   ##║\n"+//4
 				 	"╚═════╝";  //5
-		String spc = getNumero().equals("10")? "" : "";
+		String spc = getNumero().equals("10")? "" : " ";
 		ret = ret.replaceFirst("##", getNumero() + spc);
 				ret = ret.replace("*", getNaipe());
 				ret = ret.replace("##", spc +getNumero());

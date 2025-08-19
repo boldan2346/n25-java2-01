@@ -3,21 +3,21 @@ package br.com.senaisp.bauru.secao04.aula08;
 public class CalculadoraTest {
 
 	public static void main(String[] args) {
-		Calculadora calc= new Calculadora();
+		Calculadora calc = new Calculadora();
 		//Calculado cada pessoa
-		calc.calcularTotal("Pessoa1",10);
-		calc.calcularTotal("Pessoa2",12);
-		calc.calcularTotal("Pessoa3",9);
-		calc.calcularTotal("Pessoa4",8);
-		calc.calcularTotal("Pessoa5",7);
-		calc.calcularTotal("Pessoa6",15);
-		calc.calcularTotal("Pessoa7",11);
-		calc.calcularTotal("Pessoa8",30);
+		calc.calcularTotal("Pessoa 1", 10);
+		calc.calcularTotal("Pessoa 2", 12);
+		calc.calcularTotal("Pessoa 3", 9);
+		calc.calcularTotal("Pessoa 4", 8);
+		calc.calcularTotal("Pessoa 5", 7);
+		calc.calcularTotal("Pessoa 6", 15);
+		calc.calcularTotal("Pessoa 7", 11);
+		calc.calcularTotal("Pessoa 8", 30);
 		//Mostrando o total da Mesa
-		System.out.println("Total da mesa" + calc.getGrandeTotal());
-		//dividindo a conta entre 6 pagantes
-		System.out.println("A divisao para a 6 pagantes ficou em :");
-		
+		System.out.println("Total da mesa: " + calc.getGrandeTotal());
+		//Dividindo a conta entre os 6 participantes
+		System.out.println("A divisão para 6 pagantes ficou em: " + 
+								calc.dividirValor(6));
 	}
 
 }

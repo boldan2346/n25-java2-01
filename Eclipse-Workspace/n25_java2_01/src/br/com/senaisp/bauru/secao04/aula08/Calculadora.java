@@ -6,12 +6,12 @@ public class Calculadora {
 	private double comissao;
 	private double grandeTotal;
 	//Constructor
-	public Calculadora() { 
+	public Calculadora() {
 		imposto = 5;
 		comissao = 15;
-		grandeTotal=0;
+		grandeTotal = 0;
 	}
-	//comportamentos - Getters e Setters
+	//Comportamentos - Getters e Setters
 	public double getImposto() {
 		return imposto;
 	}
@@ -24,26 +24,31 @@ public class Calculadora {
 	public void setComissao(double comissao) {
 		this.comissao = comissao;
 	}
-	private double addtGrandeTotal() {
+	public double getGrandeTotal() {
 		return grandeTotal;
 	}
-	public double zerarGrandeTotal() {
-		double valorGasto = 0;
-		double ret = Math.round(valorGasto*(1+getImposto()/100+ getComissao()/100)*100)/100.;
-		String nome = null;
-		System.out.println(nome+" : R$ " + ret);
-		return ret;
-		
+	private void addGrandeTotal(double valor) {
+		this.grandeTotal += valor;
 	}
-	
+	public void zerarGrandeTotal() {
+		this.grandeTotal = 0;
+	}
+	public double calcularTotal(String nome, 
+			double valorGasto) {
+		double ret = Math.round(
+				valorGasto * (
+				1 + getImposto() / 100 + 
+				getComissao() / 100)*100)/100.;
+		addGrandeTotal(ret); //Adicionando o valor ao total
+		System.out.println(nome + ": R$ " + ret);
+		return ret;
+	}
 	public double dividirValor(int qtdPagantes) {
 		double ret = 0;
-		if(qtdPagantes>0) {
-			ret=getGrandeTotal(6)/ qtdPagantes;
+		if (qtdPagantes>0) {
+			ret = Math.round(getGrandeTotal() / 
+				    qtdPagantes * 100) / 100.0;
 		}
 		return ret;
-	}
-	private int getGrandeTotal(int i) {
-		return 0;
 	}
 }
