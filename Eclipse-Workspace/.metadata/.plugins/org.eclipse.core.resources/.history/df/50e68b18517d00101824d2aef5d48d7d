@@ -1,6 +1,6 @@
-package br.com.senaisp.bauru.secao04.aula10;
+package br.com.senaisp.bauru.secao08.aula13;
 
-public class CalculoBaskaraTest {
+public class BlackJackGameTest {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
