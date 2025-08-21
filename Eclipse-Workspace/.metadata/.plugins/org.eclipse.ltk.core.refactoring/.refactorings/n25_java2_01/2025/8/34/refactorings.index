@@ -1,1 +1,4 @@
 1755555175573	Delete element
+1755736766647	Rename field 'endereço'
+1755736806946	Rename method 'setEndereço'
+1755736851338	Rename method 'getEndereço'
