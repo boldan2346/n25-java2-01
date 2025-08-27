@@ -1,0 +1,29 @@
+package br.com.senaisp.bauru.helena.classes;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class ConectorBancoDados {
+	private static ConectorBancoDados instancia = null;
+	private String connStr;
+	//Objeto de conexão SQL
+	private Connection conn;
+	private ConectorBancoDados() throws SQLException {
+		connStr= "jdbc:sqlite:c:\\javalibs\\producao.db";
+		conn = DriverManager.getConnection(connStr);
+		}
+	private void criarEstrutura() {
+		
+	}
+	//Isso é chamado pattern Singleton 
+	public static ConectorBancoDados getInstancia() throws SQLException {
+		if(instancia == null) {
+			instancia = new ConectorBancoDados();
+			}
+		return instancia;
+	}
+	public String getConnStr() {
+		return connStr;
+}
+}
