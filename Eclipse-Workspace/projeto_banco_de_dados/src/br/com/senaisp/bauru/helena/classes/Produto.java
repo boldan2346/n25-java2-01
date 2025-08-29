@@ -1,6 +1,5 @@
 package br.com.senaisp.bauru.helena.classes;
 
-import java.lang.reflect.Array;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -51,7 +50,52 @@ public class Produto {
 		id = value;
 	}
 	//Métodos
-	public static Produto create(String descricao, double saldo,double preco) throws SQLException {
+	public void atualizarDados() {//save()
+		String sql = "update produto set descricao = ?, saldo, = ?, preco = ? where id = ?";
+		//Para salvar o registro, o id deve ser maior que zero 
+		if(id>0) {
+			PreparedStatement stmt;
+			try {
+				stmt = conn.getConnection().prepareStatement(sql);
+				stmt.setString(1, getDescricao());
+				stmt.setDouble(2, getSaldo());
+				stmt.setDouble(3, getPreco());
+				stmt.setInt(4, id);
+				//Executando a query
+				int numLin = stmt.executeUpdate();
+				System.out.println("Foram afetadas numLin linhas " + numLin);
+				} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+					}
+	}
+	public void apagarRegistro() {
+		String sql = "delete from produto where id =?";
+		//Para salvar o registro, o id deve ser maior que zero 
+		if(id>0) {
+			try {
+				PreparedStatement stmt;
+				stmt = conn.getConnection().prepareStatement(sql);
+				//passando o parametro para o sql
+				stmt.setInt(1, id);
+				//Executando a query
+				int numLin = stmt.executeUpdate();
+				System.out.println("Foram afetadas numLin linhas "+ numLin);
+				//Limpando os conteúdos do objeto
+				descricao= null;
+				preco=0;
+				saldo=0;
+				id=0;
+				} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+					}
+	}
+	//Métodos estáticos
+	//Métodos estáticos
+ 	public static Produto create(String descricao, double saldo,double preco) throws SQLException {
 		Produto prd = new Produto(descricao, saldo, preco);	
 		//Disparando SQL para inserir o registro
 		Connection co = prd.getConn().getConnection();
@@ -76,7 +120,8 @@ public class Produto {
 		ArrayList<Produto> prd = new ArrayList<Produto>();
 		try {
 			Connection co = ConectorBancoDados.getInstancia(). getConnection();
-			String sql = "select id, descricao, saldo, " + " preco from produto order by id";
+			String sql = "select id, descricao, saldo, preco from produto order by id"
+					+ "";
 			PreparedStatement stmt = co.prepareStatement(sql);
 			//Disparando o sql de consulta 
 			ResultSet rs = stmt.executeQuery();
@@ -89,6 +134,25 @@ public class Produto {
 		}
 		//Devolvendo a lkinha de produtos ou vazio
 		return prd;
+	}
+	//consultar um produto pelo Id
+	public static Produto consultarProdutoPorId(int pId) {
+		Produto ret=null;
+		try {
+			Connection conn = ConectorBancoDados .getInstancia().getConnection();
+			String sql = "select id, descricao, saldo, preco from produto where id = ? ";
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			//Atribuindo o Id para desparar a query
+			stmt.setInt(1, pId);
+			ResultSet rs = stmt. executeQuery();
+			if(rs.next()) {
+				ret = parseResultado(rs);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return ret;
 	}
 	private static Produto parseResultado(ResultSet rs) throws SQLException {
 		Produto prod = new Produto(rs.getString(2), rs.getDouble(3), rs.getDouble(4));
