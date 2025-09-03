@@ -46,8 +46,24 @@ public class CadastramentoProduto {
 		} while (op != 9);
 	}
 
-	private static Object excluirProdutos(Scanner sc) {
-		return null;
+	private static void excluirProdutos(Scanner sc) {
+		do {
+			Produto prod = pesquisarProduto(sc);
+			if(prod!=null){
+				mostrarProduto(prod);
+				String conf= confirmarOperacao("Deseja excluir o registro?(s/n)", sc);
+				if(conf.toLowerCase().equals("s")) {
+					prod.apagarRegistro();
+				}
+				//Falta continua s/n
+				conf= confirmarOperacao("Deseja continuar excluindo?(s/n)", sc);
+				if (conf.toLowerCase().equals("n")) {
+					break;
+				}
+			}else {
+				System.out.println("Produto não encontrado!");
+			}
+		}while(true);
 	}
 
 	private static void alterarProduto(Scanner sc) {
@@ -59,6 +75,11 @@ public class CadastramentoProduto {
 				String conf= confirmarOperacao("Deseja Gravar as alterações?(s/n)", sc);
 				if(conf.toLowerCase().equals("s")) {
 					prod.atualizarDados();
+				}
+				//Falta continua s/n
+				conf= confirmarOperacao("Deseja continuar alterando?(s/n)", sc);
+				if (conf.toLowerCase().equals("n")) {
+					break;
 				}
 			}else {
 				System.out.println("Produto não encontrado!");
@@ -93,6 +114,7 @@ public class CadastramentoProduto {
 				System.out.println("Digite o id a ser pesquisado");
 				try {
 				int pId = sc.nextInt();
+				sc.nextLine();//Capturar o enter
 				prod = Produto.consultarProdutoPorId(pId);
 				break;
 			}catch (InputMismatchException e) {
@@ -107,7 +129,7 @@ public class CadastramentoProduto {
 	List<Produto> lista =Produto.listarProdutos();
 	for(Produto it:lista) {
 		System.out.println("Produto: " + it.getDescricao());
-		System.out.print(" - " + it.getId()+" - ");
+		System.out.print(" - " + it.getId()+ " - ");
 		System.out.println("Saldo: " + it.getSaldo());
 	}
 	System.out.println("Fim da Listagem...");
@@ -155,6 +177,7 @@ public class CadastramentoProduto {
 		
 		System.out.println("Digite o preco");
 		 prod.setPreco(sc.nextDouble());
+		 sc.nextLine();// capturando o enter
 	}
 
 	private static String confirmarOperacao(String msg, Scanner sc) {

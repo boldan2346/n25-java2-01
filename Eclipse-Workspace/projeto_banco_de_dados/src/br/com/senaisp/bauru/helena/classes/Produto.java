@@ -54,7 +54,7 @@ public class Produto {
 	}
 	//Métodos
 	public void atualizarDados() {//save()
-		String sql = "update produto set descricao = ?, saldo, = ?, preco = ? where id = ?";
+		String sql = "update produto set descricao = ?, saldo = ?, preco = ? where id = ?";
 		//Para salvar o registro, o id deve ser maior que zero 
 		if(id>0) {
 			PreparedStatement stmt;

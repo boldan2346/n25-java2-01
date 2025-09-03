@@ -19,4 +19,7 @@
     <fullyQualifiedTypeName name="br.com.senaisp.bauru.helena.classes.Produto"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
+    <fullyQualifiedTypeName name="java.applet.Applet"/>
+    <fullyQualifiedTypeName name="javafx.application.Application"/>
+    <fullyQualifiedTypeName name="javafx.scene.control.Button"/>
 </qualifiedTypeNameHistroy>
