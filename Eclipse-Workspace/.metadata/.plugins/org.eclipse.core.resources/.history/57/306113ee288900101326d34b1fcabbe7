@@ -1,0 +1,27 @@
+package br.com.senaisp.bauru;
+
+import java.awt.Color;
+import java.awt.RecTangle;
+
+import javafx.application.Application;
+import javafx.scene.Group;
+import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
+
+public class JavaFXExercicio01 extends Application {
+
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		//Criando o no rot
+		Group noRoot = new Group();
+		//Componentedo nó root
+		HBox cmp01 = new HBox();
+		RecTangle cmp02 = new RecTangle(100,200,Color.pink);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

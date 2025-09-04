@@ -1,0 +1,12 @@
+package br.com.senaisp.bauru;
+
+import javafx.aplication.Aplication;
+
+public class JavaFXExemplo01 extends Aplication {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
