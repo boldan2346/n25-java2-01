@@ -25,11 +25,9 @@
     <fullyQualifiedTypeName name="javafx.scene.control.Button"/>
     <fullyQualifiedTypeName name="java.util.Stack"/>
     <fullyQualifiedTypeName name="javafx.scene.layout.StackPane"/>
-    <fullyQualifiedTypeName name="javafx.scene.Scene"/>
     <fullyQualifiedTypeName name="java.awt.image.TileObserver"/>
     <fullyQualifiedTypeName name="javafx.scene.layout.TilePane"/>
     <fullyQualifiedTypeName name="javafx.scene.layout.VBox"/>
-    <fullyQualifiedTypeName name="javafx.scene.Group"/>
     <fullyQualifiedTypeName name="javafx.scene.layout.HBox"/>
     <fullyQualifiedTypeName name="java.awt.Rectangle"/>
     <fullyQualifiedTypeName name="java.awt.Color"/>
@@ -37,5 +35,16 @@
     <fullyQualifiedTypeName name="javafx.scene.text.Text"/>
     <fullyQualifiedTypeName name="javafx.scene.image.ImageView"/>
     <fullyQualifiedTypeName name="javafx.scene.shape.Rectangle"/>
+    <fullyQualifiedTypeName name="javafx.scene.image.Image"/>
+    <fullyQualifiedTypeName name="javafx.scene.text.Font"/>
+    <fullyQualifiedTypeName name="javafx.scene.text.FontWeight"/>
+    <fullyQualifiedTypeName name="javafx.scene.shape.StrokeType"/>
+    <fullyQualifiedTypeName name="javafx.scene.shape.StrokeLineCap"/>
+    <fullyQualifiedTypeName name="javafx.scene.shape.StrokeLineJoin"/>
+    <fullyQualifiedTypeName name="javafx.scene.effect.DropShadow"/>
+    <fullyQualifiedTypeName name="javafx.scene.text.TextAlignment"/>
+    <fullyQualifiedTypeName name="javafx.scene.Group"/>
+    <fullyQualifiedTypeName name="javafx.scene.shape.Polygon"/>
+    <fullyQualifiedTypeName name="javafx.scene.Scene"/>
     <fullyQualifiedTypeName name="javafx.scene.paint.Color"/>
 </qualifiedTypeNameHistroy>
