@@ -31,9 +31,7 @@
     <fullyQualifiedTypeName name="java.awt.Color"/>
     <fullyQualifiedTypeName name="java.lang.runtime.TemplateRuntime"/>
     <fullyQualifiedTypeName name="javafx.scene.text.Text"/>
-    <fullyQualifiedTypeName name="javafx.scene.image.ImageView"/>
     <fullyQualifiedTypeName name="javafx.scene.shape.Rectangle"/>
-    <fullyQualifiedTypeName name="javafx.scene.image.Image"/>
     <fullyQualifiedTypeName name="javafx.scene.text.Font"/>
     <fullyQualifiedTypeName name="javafx.scene.text.FontWeight"/>
     <fullyQualifiedTypeName name="javafx.scene.shape.StrokeType"/>
@@ -55,4 +53,9 @@
     <fullyQualifiedTypeName name="javafx.scene.media.MediaPlayer"/>
     <fullyQualifiedTypeName name="javafx.scene.media.MediaView"/>
     <fullyQualifiedTypeName name="javafx.scene.control.Button"/>
+    <fullyQualifiedTypeName name="javafx.scene.image.Image"/>
+    <fullyQualifiedTypeName name="javax.swing.text.html.ImageView"/>
+    <fullyQualifiedTypeName name="br.com.senaisp.bauru.classes.Duke"/>
+    <fullyQualifiedTypeName name="javafx.scene.image.ImageView"/>
+    <fullyQualifiedTypeName name="javafx.scene.media.AudioClip"/>
 </qualifiedTypeNameHistroy>
